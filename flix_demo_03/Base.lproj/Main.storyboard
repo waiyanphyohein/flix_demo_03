@@ -36,7 +36,7 @@
                                                     <color key="backgroundColor" red="1" green="0.96185914354945823" blue="0.98487811599522812" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THE-yU-ilo">
-                                                    <rect key="frame" x="203" y="1" width="157" height="32"/>
+                                                    <rect key="frame" x="203" y="1" width="132" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                     <nil key="textColor"/>
@@ -54,7 +54,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="overviewLabel" destination="vYn-AW-KlH" id="A8i-WC-WpQ"/>
-                                            <outlet property="title" destination="THE-yU-ilo" id="F2h-2s-dso"/>
                                             <outlet property="titleLabel" destination="THE-yU-ilo" id="oKF-B6-ciR"/>
                                         </connections>
                                     </tableViewCell>
