@@ -6,8 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,53 +23,40 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="278" id="rPh-Gm-WXc">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="278" id="rPh-Gm-WXc" customClass="MovieCell" customModule="flix_demo_03" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="278"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rPh-Gm-WXc" id="Ydo-vI-1S4">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rPh-Gm-WXc" id="Ydo-vI-1S4" customClass="MovieCell" customModule="flix_demo_03" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="277.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GM6-aQ-xoc">
+                                                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GM6-aQ-xoc">
                                                     <rect key="frame" x="15" y="0.0" width="180" height="267"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="1" green="0.96185914354945823" blue="0.98487811599522812" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THE-yU-ilo">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THE-yU-ilo">
                                                     <rect key="frame" x="203" y="1" width="157" height="32"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="THE-yU-ilo" secondAttribute="height" multiplier="157:32" id="8yG-rt-YN0"/>
-                                                        <constraint firstAttribute="width" constant="157" id="GCV-eB-iyP"/>
-                                                        <constraint firstAttribute="height" constant="32" id="W1H-ek-M7X"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYn-AW-KlH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYn-AW-KlH">
                                                     <rect key="frame" x="203" y="40" width="157" height="227"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="157" id="9WH-j9-U29"/>
-                                                        <constraint firstAttribute="height" constant="227" id="n6j-0c-82o"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</string>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="GM6-aQ-xoc" secondAttribute="bottom" constant="10.5" id="Ckw-pJ-wg9"/>
-                                                <constraint firstItem="vYn-AW-KlH" firstAttribute="top" secondItem="THE-yU-ilo" secondAttribute="bottom" constant="7" id="D9T-Oj-zhn"/>
-                                                <constraint firstItem="vYn-AW-KlH" firstAttribute="top" secondItem="THE-yU-ilo" secondAttribute="bottom" constant="7" id="Dxy-iz-ycB"/>
-                                                <constraint firstItem="vYn-AW-KlH" firstAttribute="trailing" secondItem="Ydo-vI-1S4" secondAttribute="trailingMargin" id="Fv9-pc-m6I"/>
-                                                <constraint firstItem="vYn-AW-KlH" firstAttribute="bottom" secondItem="Ydo-vI-1S4" secondAttribute="bottomMargin" id="GVk-UO-cbd"/>
-                                                <constraint firstItem="GM6-aQ-xoc" firstAttribute="top" secondItem="Ydo-vI-1S4" secondAttribute="top" id="L3O-l4-jbi"/>
-                                                <constraint firstItem="THE-yU-ilo" firstAttribute="top" secondItem="Ydo-vI-1S4" secondAttribute="top" constant="1" id="cTI-Al-ON7"/>
-                                                <constraint firstAttribute="trailing" secondItem="THE-yU-ilo" secondAttribute="trailing" constant="15" id="pPS-aK-vVm"/>
-                                                <constraint firstItem="vYn-AW-KlH" firstAttribute="leading" secondItem="GM6-aQ-xoc" secondAttribute="trailing" constant="8" id="pfb-rz-Hdc"/>
-                                                <constraint firstItem="THE-yU-ilo" firstAttribute="leading" secondItem="GM6-aQ-xoc" secondAttribute="trailing" constant="8" id="tHD-68-6cr"/>
-                                                <constraint firstItem="GM6-aQ-xoc" firstAttribute="leading" secondItem="Ydo-vI-1S4" secondAttribute="leading" constant="15" id="wv6-3g-Zns"/>
-                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="overviewLabel" destination="vYn-AW-KlH" id="A8i-WC-WpQ"/>
+                                            <outlet property="title" destination="THE-yU-ilo" id="F2h-2s-dso"/>
+                                            <outlet property="titleLabel" destination="THE-yU-ilo" id="oKF-B6-ciR"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
