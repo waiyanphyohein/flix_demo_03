@@ -15,13 +15,25 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     var movies:[[String:Any]] = [];
-    
+    var refreshControl: UIRefreshControl!;
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        tableView.dataSource = self as! UITableViewDataSource;
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US&page=1")!
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10);
+        refreshControl = UIRefreshControl();
+        refreshControl.addTarget(self, action: #selector(NowPlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0);
+        tableView.dataSource = self;
+        fetchMovies();
+        
+    }
+    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
+        
+        fetchMovies();
+    }
+    
+    func fetchMovies(){
+        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US&page=1-2")!
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20);
         let session = URLSession(configuration: .default, delegate: nil , delegateQueue: OperationQueue.main);
         let task = session.dataTask(with: request) { ( data, response, error) in
             
@@ -33,11 +45,12 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource {
                 let movies = dataDictionary["results"] as! [[String:  Any]];
                 self.movies = movies;
                 self.tableView.reloadData();
+                self.refreshControl.endRefreshing();
             }
+            
             
         }
         task.resume();
-        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count ;
