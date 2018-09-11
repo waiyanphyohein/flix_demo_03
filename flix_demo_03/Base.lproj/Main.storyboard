@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,31 +31,44 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="277.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GM6-aQ-xoc">
-                                                    <rect key="frame" x="15" y="0.0" width="180" height="267"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="1" green="0.96185914354945823" blue="0.98487811599522812" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THE-yU-ilo">
-                                                    <rect key="frame" x="203" y="1" width="132" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYn-AW-KlH">
-                                                    <rect key="frame" x="203" y="40" width="157" height="227"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</string>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYn-AW-KlH">
+                                                    <rect key="frame" x="177" y="62" width="183" height="216"/>
+                                                    <string key="text">ABABABABABABABBABABABABABABABABBABABABABABABABABABABABABABABABBABABABABAABABABABABABABBABABABABABABABABBABABABABABABABABABABABABABABABBABABABABAABABABABABABABBABABABABABABABABBABABABABABABABABABABABABABABABBABABABABA</string>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GM6-aQ-xoc">
+                                                    <rect key="frame" x="6" y="0.0" width="163" height="278"/>
+                                                    <color key="backgroundColor" red="1" green="0.96185914354945823" blue="0.98487811599522812" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Movie Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBd-H3-3g5">
+                                                    <rect key="frame" x="177" y="0.0" width="183" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="FjU-xb-xkB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GM6-aQ-xoc" firstAttribute="bottom" secondItem="vYn-AW-KlH" secondAttribute="bottom" id="18C-yz-S3l"/>
+                                                <constraint firstItem="UBd-H3-3g5" firstAttribute="leading" secondItem="vYn-AW-KlH" secondAttribute="leading" id="2bM-OX-XxK"/>
+                                                <constraint firstItem="GM6-aQ-xoc" firstAttribute="centerY" secondItem="Ydo-vI-1S4" secondAttribute="centerY" id="3z5-0K-jsV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UBd-H3-3g5" secondAttribute="trailing" id="GMH-Of-YjF"/>
+                                                <constraint firstItem="GM6-aQ-xoc" firstAttribute="top" secondItem="UBd-H3-3g5" secondAttribute="top" id="GoM-3q-hbv"/>
+                                                <constraint firstItem="GM6-aQ-xoc" firstAttribute="top" secondItem="Ydo-vI-1S4" secondAttribute="top" id="OfX-5u-ap0"/>
+                                                <constraint firstItem="GM6-aQ-xoc" firstAttribute="leading" secondItem="Ydo-vI-1S4" secondAttribute="leadingMargin" constant="-9" id="aDN-Xz-Mym"/>
+                                                <constraint firstItem="UBd-H3-3g5" firstAttribute="trailing" secondItem="vYn-AW-KlH" secondAttribute="trailing" id="b5e-At-vZx"/>
+                                                <constraint firstItem="UBd-H3-3g5" firstAttribute="leading" secondItem="GM6-aQ-xoc" secondAttribute="trailing" constant="8" symbolic="YES" id="eIR-m6-we5"/>
+                                                <constraint firstItem="vYn-AW-KlH" firstAttribute="top" secondItem="UBd-H3-3g5" secondAttribute="bottom" constant="19" id="v4O-c1-7fu"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="overviewLabel" destination="vYn-AW-KlH" id="A8i-WC-WpQ"/>
-                                            <outlet property="titleLabel" destination="THE-yU-ilo" id="oKF-B6-ciR"/>
+                                            <outlet property="posterImageView" destination="GM6-aQ-xoc" id="rKB-EC-BWi"/>
+                                            <outlet property="titleLabel" destination="UBd-H3-3g5" id="ZdY-Vn-rkc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
