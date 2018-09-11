@@ -10,7 +10,7 @@ import UIKit
 import AlamofireImage
 
 class NowPlayingViewController: UIViewController,UITableViewDataSource {
-
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -70,7 +70,7 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource {
         cell.posterImageView.af_setImage(withURL: posterURL)
         return cell;
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
