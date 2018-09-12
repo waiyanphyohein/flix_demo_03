@@ -10,6 +10,9 @@ target 'flix_demo_03' do
   # This pulls in the latest version of Alamofire >= 4.4 but less than 5.0.
   pod 'Alamofire', '~> 4.4'
   pod 'AlamofireImage', '~> 3.1'
+  pod "KRProgressHUD"
+  pod "KRActivityIndicatorView"
+
   # Add additional dependencies
 
   target 'flix_demo_03Tests' do

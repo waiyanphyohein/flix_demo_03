@@ -15,7 +15,7 @@ The following **required** user stories are complete:
 
 The following **stretch** user stories are implemented:
 
-- [ ] User sees an alert when there's a networking error (+1pt)
+- [x] User sees an alert when there's a networking error (+1pt)
 - [ ] User can search for a movie (+3pt)
 - [ ] While poster is being fetched, user see's a placeholder image (+1pt)
 - [ ] User sees image transition for images coming from network, not when it is loaded from cache (+1pt)
@@ -24,28 +24,27 @@ The following **stretch** user stories are implemented:
 
 The following **additional** user stories are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality! (+1-3pts)
+- [x] List anything else that you can get done to improve the app functionality! (+1-3pts)
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1.When json is failed to lookup initially, it would be great to show some sample data on frontend. Data can be fetched by running background activity every hour and cache. Although we are not that far into managing our caches, it would be great if we could do it.
+2.When clicked on video links, it should redirect to some webpage with theater timeline of when the movie will be hosted as well as cost. Of course, we need to consider using another API to accomplish this. But it would be cool if we could do it.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='WorkingWeek1Assignment.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
-
-Describe any challenges encountered while building the app.
+When trying to implement UI for NowPlayingViewController, I have trouble managing the width and length of labels and images. Problem was due to creation of ViewController.xib file which is used to give interactive view actions on XCode. Also I missplaced class name in content view section under moviecell which caused very weird UI Bugs. However, I was able to resolve those problems with the help of my peer. He has been very helpful with figuring and pinpointing the problems as well as troubleshooting some of XCode projects like Cocopads installation.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2018] [MIT]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
