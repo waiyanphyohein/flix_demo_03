@@ -18,6 +18,8 @@
 		8684117F2150177400EDF165 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684117E2150177400EDF165 /* DetailViewController.swift */; };
 		86CC8E21214727E100CDE29C /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC8E20214727E100CDE29C /* MovieCell.swift */; };
 		86CC8E2521476B0100CDE29C /* NowPlayingViewControllerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC8E2421476B0100CDE29C /* NowPlayingViewControllerCollectionViewController.swift */; };
+		86EEA03D21530261007A397E /* PosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EEA03C21530261007A397E /* PosterCell.swift */; };
+		86EEA03F215302E8007A397E /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EEA03E215302E8007A397E /* GridViewController.swift */; };
 		C8F4A4DCB18BC995649DE801 /* Pods_flix_demo_03UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93CFFADAF7F1CF639370AB4D /* Pods_flix_demo_03UITests.framework */; };
 		F98E6CBB5A50FAA94D5344C5 /* Pods_flix_demo_03.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCF09EE4E05097F0711CDF9 /* Pods_flix_demo_03.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +63,8 @@
 		8684117E2150177400EDF165 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		86CC8E20214727E100CDE29C /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		86CC8E2421476B0100CDE29C /* NowPlayingViewControllerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewControllerCollectionViewController.swift; sourceTree = "<group>"; };
+		86EEA03C21530261007A397E /* PosterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCell.swift; sourceTree = "<group>"; };
+		86EEA03E215302E8007A397E /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		93CFFADAF7F1CF639370AB4D /* Pods_flix_demo_03UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flix_demo_03UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A47BE5F21CD7EBE8C5BB8A50 /* Pods-flix_demo_03Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flix_demo_03Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-flix_demo_03Tests/Pods-flix_demo_03Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CDA511628909CB0E87CF4D66 /* Pods_flix_demo_03Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flix_demo_03Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +169,7 @@
 			children = (
 				8684117E2150177400EDF165 /* DetailViewController.swift */,
 				86CC8E2421476B0100CDE29C /* NowPlayingViewControllerCollectionViewController.swift */,
+				86EEA03E215302E8007A397E /* GridViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				86CC8E20214727E100CDE29C /* MovieCell.swift */,
+				86EEA03C21530261007A397E /* PosterCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -416,6 +422,8 @@
 			files = (
 				8636B530213A5E5400DA3684 /* ViewController.swift in Sources */,
 				86CC8E21214727E100CDE29C /* MovieCell.swift in Sources */,
+				86EEA03D21530261007A397E /* PosterCell.swift in Sources */,
+				86EEA03F215302E8007A397E /* GridViewController.swift in Sources */,
 				8684117F2150177400EDF165 /* DetailViewController.swift in Sources */,
 				8636B52E213A5E5400DA3684 /* AppDelegate.swift in Sources */,
 				86CC8E2521476B0100CDE29C /* NowPlayingViewControllerCollectionViewController.swift in Sources */,

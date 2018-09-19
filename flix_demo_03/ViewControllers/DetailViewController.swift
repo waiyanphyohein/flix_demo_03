@@ -33,10 +33,11 @@ class DetailViewController: UIViewController {
             ReleaseDateLabel.text = movie["release_date"] as? String;
             OverviewLabel.text = movie["overview"] as? String
             let backDropURL = movie[MovieKeys.backdrop] as! String
-            
+            let smallPosterURL = movie["poster_path"] as! String
             let posterPathURL = MovieKeys.posterPath;
             let backDropURLString = URL(string: posterPathURL + backDropURL)!
             backDropPost.af_setImage(withURL: backDropURLString)
+            postImageView.af_setImage(withURL: URL(string: posterPathURL + smallPosterURL)!)
         }
         // Do any additional setup after loading the view.
     }
