@@ -8,7 +8,7 @@
 
 import UIKit
 import AlamofireImage
-import KRActivityIndicatorView
+//import KRActivityIndicatorView
 
 class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
@@ -88,10 +88,17 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableVi
         task.resume();
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count ;
+        return movies.count;
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell;
+        if let index_path = tableView.indexPath(for: cell){
+            let movie = movies[index_path.row]
+            let detailViewController =  segue.destination as! DetailViewController
+            detailViewController.movie = movie;
+        }
+    }
+    func tableView(_ tableView: UITableView , cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell;
         
         let movie = movies[indexPath.row];

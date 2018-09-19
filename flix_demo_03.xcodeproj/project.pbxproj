@@ -15,6 +15,7 @@
 		8636B538213A5E5700DA3684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8636B536213A5E5700DA3684 /* LaunchScreen.storyboard */; };
 		8636B543213A5E5700DA3684 /* flix_demo_03Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8636B542213A5E5700DA3684 /* flix_demo_03Tests.swift */; };
 		8636B54E213A5E5700DA3684 /* flix_demo_03UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8636B54D213A5E5700DA3684 /* flix_demo_03UITests.swift */; };
+		8684117F2150177400EDF165 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8684117E2150177400EDF165 /* DetailViewController.swift */; };
 		86CC8E21214727E100CDE29C /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC8E20214727E100CDE29C /* MovieCell.swift */; };
 		86CC8E2521476B0100CDE29C /* NowPlayingViewControllerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CC8E2421476B0100CDE29C /* NowPlayingViewControllerCollectionViewController.swift */; };
 		C8F4A4DCB18BC995649DE801 /* Pods_flix_demo_03UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93CFFADAF7F1CF639370AB4D /* Pods_flix_demo_03UITests.framework */; };
@@ -57,6 +58,7 @@
 		8636B549213A5E5700DA3684 /* flix_demo_03UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flix_demo_03UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8636B54D213A5E5700DA3684 /* flix_demo_03UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flix_demo_03UITests.swift; sourceTree = "<group>"; };
 		8636B54F213A5E5700DA3684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8684117E2150177400EDF165 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		86CC8E20214727E100CDE29C /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		86CC8E2421476B0100CDE29C /* NowPlayingViewControllerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewControllerCollectionViewController.swift; sourceTree = "<group>"; };
 		93CFFADAF7F1CF639370AB4D /* Pods_flix_demo_03UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flix_demo_03UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,14 +130,14 @@
 		8636B52C213A5E5400DA3684 /* flix_demo_03 */ = {
 			isa = PBXGroup;
 			children = (
+				8684117D2150173200EDF165 /* Views */,
+				8684117C2150171E00EDF165 /* ViewControllers */,
 				8636B52D213A5E5400DA3684 /* AppDelegate.swift */,
 				8636B52F213A5E5400DA3684 /* ViewController.swift */,
 				8636B531213A5E5400DA3684 /* Main.storyboard */,
 				8636B534213A5E5700DA3684 /* Assets.xcassets */,
 				8636B536213A5E5700DA3684 /* LaunchScreen.storyboard */,
 				8636B539213A5E5700DA3684 /* Info.plist */,
-				86CC8E20214727E100CDE29C /* MovieCell.swift */,
-				86CC8E2421476B0100CDE29C /* NowPlayingViewControllerCollectionViewController.swift */,
 			);
 			path = flix_demo_03;
 			sourceTree = "<group>";
@@ -156,6 +158,23 @@
 				8636B54F213A5E5700DA3684 /* Info.plist */,
 			);
 			path = flix_demo_03UITests;
+			sourceTree = "<group>";
+		};
+		8684117C2150171E00EDF165 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8684117E2150177400EDF165 /* DetailViewController.swift */,
+				86CC8E2421476B0100CDE29C /* NowPlayingViewControllerCollectionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8684117D2150173200EDF165 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86CC8E20214727E100CDE29C /* MovieCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F4A67226E2BD367D350A1E06 /* Pods */ = {
@@ -243,6 +262,7 @@
 				TargetAttributes = {
 					8636B529213A5E5400DA3684 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -251,10 +271,12 @@
 					};
 					8636B53D213A5E5700DA3684 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 8636B529213A5E5400DA3684;
 					};
 					8636B548213A5E5700DA3684 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 8636B529213A5E5400DA3684;
 					};
 				};
@@ -394,6 +416,7 @@
 			files = (
 				8636B530213A5E5400DA3684 /* ViewController.swift in Sources */,
 				86CC8E21214727E100CDE29C /* MovieCell.swift in Sources */,
+				8684117F2150177400EDF165 /* DetailViewController.swift in Sources */,
 				8636B52E213A5E5400DA3684 /* AppDelegate.swift in Sources */,
 				86CC8E2521476B0100CDE29C /* NowPlayingViewControllerCollectionViewController.swift in Sources */,
 			);
@@ -579,7 +602,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.flix-demo-03";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -599,7 +622,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.flix-demo-03";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -620,7 +643,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.flix-demo-03Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/flix_demo_03.app/flix_demo_03";
 			};
@@ -642,7 +665,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.flix-demo-03Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/flix_demo_03.app/flix_demo_03";
 			};
@@ -663,7 +686,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.flix-demo-03UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = flix_demo_03;
 			};
@@ -684,7 +707,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.codepath.flix-demo-03UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = flix_demo_03;
 			};
