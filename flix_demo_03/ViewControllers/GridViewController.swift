@@ -11,6 +11,8 @@ import UIKit
 class GridViewController: UIViewController,UICollectionViewDataSource {
     
     var movies: [[String: Any]] = []
+    let alertController = UIAlertController(title: "Error", message: "Movie Not Found", preferredStyle: .alert);
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count;
     }
@@ -36,22 +38,23 @@ class GridViewController: UIViewController,UICollectionViewDataSource {
         let task = session.dataTask(with: request) { ( data, response, error) in
             
             if let error = error{
-                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-                    // handle cancel response here. Doing nothing will dismiss the view.
-                }
-                // add the cancel action to the alertController
-                //self.alertController.addAction(cancelAction)
-                
-                // create an OK action
-                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-                    // handle response here.
-                }
+//                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+//                    // handle cancel response here. Doing nothing will dismiss the view.
+//                }
+//                // add the cancel action to the alertController
+//                //self.alertController.addAction(cancelAction)
+//
+//                // create an OK action
+//                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+//                    // handle response here.
+//                }
                 // add the OK action to the alert controller
                 //self.tabBarController.addAction(OKAction)
                 //self.tabBarController.message = error.localizedDescription;
                 //self.present(self.tabBarControllertabBarController, animated: true) {
                     // optional code for what happens after the alert controller has finished presenting
-                //}r                print(error.localizedDescription);
+                //}r
+                print(error.localizedDescription);
                 //self.refreshControl.endRefreshing();
                 //self.activityIndicator.stopAnimating();
             }else if let data = data{
@@ -75,10 +78,27 @@ class GridViewController: UIViewController,UICollectionViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchMovies();
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.minimumInteritemSpacing = 5;
+        layout.minimumLineSpacing = layout.minimumInteritemSpacing;        
+        let cellsPerLine: CGFloat = 2;
+        let interItemSpacingTotal = layout.minimumInteritemSpacing * (cellsPerLine - 1) ;
+        let width = collectionView.frame.size.width / cellsPerLine - interItemSpacingTotal / cellsPerLine;
+        layout.itemSize = CGSize(width: width, height: width * 3/2)
+        
         collectionView.dataSource = self;
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UICollectionViewCell;
+        if let index_path = collectionView.indexPath(for: cell){
+            let movie = movies[index_path.row]
+            let detailViewController =  segue.destination as! DetailViewController
+            detailViewController.movie = movie;
+        }
+    }
+
 
     /*
     // MARK: - Navigation
