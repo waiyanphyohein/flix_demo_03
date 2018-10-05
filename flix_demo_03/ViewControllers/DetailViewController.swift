@@ -24,16 +24,16 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var backDropPost: UIImageView!
     @IBOutlet weak var OverviewLabel: UILabel!
     
-    var movie: [String: Any]?;
+    var movie: Movie?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if let movie = movie{
-            titleLabel.text = movie[MovieKeys.title] as? String;
-            ReleaseDateLabel.text = movie["release_date"] as? String;
-            OverviewLabel.text = movie["overview"] as? String
-            let backDropURL = movie[MovieKeys.backdrop] as! String
-            let smallPosterURL = movie["poster_path"] as! String
+            titleLabel.text = movie.title
+            ReleaseDateLabel.text = movie.releasedDate;
+            OverviewLabel.text = movie.overview;
+            let backDropURL = movie.backdrop;
+            let smallPosterURL = movie.posterPath
             let posterPathURL = MovieKeys.posterPath;
             let backDropURLString = URL(string: posterPathURL + backDropURL)!
             backDropPost.af_setImage(withURL: backDropURLString)

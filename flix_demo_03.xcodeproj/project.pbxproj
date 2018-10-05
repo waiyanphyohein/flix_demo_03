@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		742B25F8F41F5A1926B9C2F7 /* Pods_flix_demo_03Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA511628909CB0E87CF4D66 /* Pods_flix_demo_03Tests.framework */; };
+		8609AB842166DA91009DCD54 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8609AB832166DA91009DCD54 /* Movie.swift */; };
 		8636B52E213A5E5400DA3684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8636B52D213A5E5400DA3684 /* AppDelegate.swift */; };
 		8636B530213A5E5400DA3684 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8636B52F213A5E5400DA3684 /* ViewController.swift */; };
 		8636B533213A5E5400DA3684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8636B531213A5E5400DA3684 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		78052496BE006FB2338C38BB /* Pods-flix_demo_03Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flix_demo_03Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flix_demo_03Tests/Pods-flix_demo_03Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		83C5EE7C0D6B99ED7236C2DD /* Pods-flix_demo_03UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flix_demo_03UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flix_demo_03UITests/Pods-flix_demo_03UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		859AB3E1F4DEAE6CEADCB7D4 /* Pods-flix_demo_03UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flix_demo_03UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-flix_demo_03UITests/Pods-flix_demo_03UITests.release.xcconfig"; sourceTree = "<group>"; };
+		8609AB832166DA91009DCD54 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		86134178214877150035B3FB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8636B52A213A5E5400DA3684 /* flix_demo_03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flix_demo_03.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8636B52D213A5E5400DA3684 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				8684117C2150171E00EDF165 /* ViewControllers */,
 				8636B52D213A5E5400DA3684 /* AppDelegate.swift */,
 				8636B52F213A5E5400DA3684 /* ViewController.swift */,
+				8609AB832166DA91009DCD54 /* Movie.swift */,
 				8636B531213A5E5400DA3684 /* Main.storyboard */,
 				8636B534213A5E5700DA3684 /* Assets.xcassets */,
 				8636B536213A5E5700DA3684 /* LaunchScreen.storyboard */,
@@ -426,6 +429,7 @@
 				86EEA03F215302E8007A397E /* GridViewController.swift in Sources */,
 				8684117F2150177400EDF165 /* DetailViewController.swift in Sources */,
 				8636B52E213A5E5400DA3684 /* AppDelegate.swift in Sources */,
+				8609AB842166DA91009DCD54 /* Movie.swift in Sources */,
 				86CC8E2521476B0100CDE29C /* NowPlayingViewControllerCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

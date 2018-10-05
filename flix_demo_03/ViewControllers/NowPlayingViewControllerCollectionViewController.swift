@@ -17,7 +17,7 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableVi
     
     let alertController = UIAlertController(title: "Error", message: "Movie Not Found", preferredStyle: .alert);
     
-    var movies:[[String:Any]] = [];
+    var movies:[Movie] = [];
     var refreshControl: UIRefreshControl!;
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -32,6 +32,7 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableVi
         fetchMovies();
         
     }
+    
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
         // Start the activity indicator
         
@@ -75,7 +76,13 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableVi
                 
                 let dataDictionary =  try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any];
                 let movies = dataDictionary["results"] as! [[String:  Any]];
-                self.movies = movies;
+                print(movies);
+                self.movies = [];
+                
+                for dictionary in movies{
+                    let  movie = Movie(dictionary: dictionary)
+                    self.movies.append(movie);
+                }
                 self.tableView.reloadData();
                 self.refreshControl.endRefreshing();
                 self.activityIndicator.stopAnimating();
@@ -102,14 +109,19 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell;
         
         let movie = movies[indexPath.row];
-        let title = movie["title"] as! String
-        let overview = movie["overview"] as! String
-        let posterPathString = movie["poster_path"] as! String;
+        
+        let title = movie.title
+        let overview = movie.overview
+        let posterPathString = movie.posterPath
         let baseURLString = "https://image.tmdb.org/t/p/w500";
-        let posterURL = URL(string: baseURLString + posterPathString)!;
+        
+        
         cell.titleLabel.text = title;
         cell.overviewLabel.text = overview;
-        cell.posterImageView.af_setImage(withURL: posterURL)
+        if posterPathString != ""{
+            let posterURL = URL(string: baseURLString + posterPathString)!;
+            cell.posterImageView.af_setImage(withURL: posterURL);
+        }
         return cell;
     }
     
