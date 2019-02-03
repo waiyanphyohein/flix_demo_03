@@ -75,13 +75,14 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableVi
             }else if let data = data{
                 
                 let dataDictionary =  try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any];
-                let movies = dataDictionary["results"] as! [[String:  Any]];
-                print(movies);
+                let moviesd = dataDictionary["results"] as! [[String:  Any]];
+                print(moviesd);
                 self.movies = [];
                 
-                for dictionary in movies{
+                for dictionary in moviesd{
                     let  movie = Movie(dictionary: dictionary)
                     self.movies.append(movie);
+                 
                 }
                 self.tableView.reloadData();
                 self.refreshControl.endRefreshing();
@@ -102,6 +103,7 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableVi
         if let index_path = tableView.indexPath(for: cell){
             let movie = movies[index_path.row]
             let detailViewController =  segue.destination as! DetailViewController
+            print(movie)
             detailViewController.movie = movie;
         }
     }
@@ -114,7 +116,6 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableVi
         let overview = movie.overview
         let posterPathString = movie.posterPath
         let baseURLString = "https://image.tmdb.org/t/p/w500";
-        
         
         cell.titleLabel.text = title;
         cell.overviewLabel.text = overview;

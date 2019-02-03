@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         if let movie = movie{
             titleLabel.text = movie.title
-            ReleaseDateLabel.text = movie.releasedDate;
+            ReleaseDateLabel.text = movie.releasedDate
             OverviewLabel.text = movie.overview;
             let backDropURL = movie.backdrop;
             let smallPosterURL = movie.posterPath
@@ -42,6 +42,20 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func TrailerButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "TrailerSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TrailerSegue"{
+            
+            let trailerVC = segue.destination as! YouTubeTrailerViewController
+            trailerVC.key = String((movie?.movieID)!);
+            print(trailerVC.key);
+            
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

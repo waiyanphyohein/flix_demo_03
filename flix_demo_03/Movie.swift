@@ -14,13 +14,16 @@ class Movie{
     var backdrop: String = ""
     var posterURL: URL?
     var posterPath: String = ""
-    
+    var movieID: Int;
+    static var sharedData: [Movie] = [];
+
     init(dictionary: [String: Any]){
         title = dictionary["title"] as? String ?? "No Title"
         overview = dictionary["overview"] as? String ?? "NO Description"
-        releasedDate = dictionary["releasedDate"] as? String ?? "N/A"
-        backdrop = dictionary["backdrop_path"] as? String ?? "No Title"
-        posterPath = dictionary["poster_path"] as? String ?? "No Title"
+        releasedDate = "Released Date: \(dictionary["release_date"] ?? "Released Date: N/A")"
+        backdrop = dictionary["backdrop_path"] as? String ?? "No Title";
+        posterPath = dictionary["poster_path"] as? String ?? "No Title";
+        movieID = dictionary["id"] as? Int ?? 0000000;
     }
     class func movies(dictionaries: [[String: Any]]) -> [Movie] {
         var movies: [Movie] = []
@@ -28,7 +31,7 @@ class Movie{
             let movie = Movie(dictionary: dictionary)
             movies.append(movie)
         }
-        
+        sharedData = movies;
         return movies
     }
 }

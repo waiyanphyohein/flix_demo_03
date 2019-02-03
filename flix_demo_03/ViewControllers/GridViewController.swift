@@ -10,7 +10,7 @@ import UIKit
 
 class GridViewController: UIViewController,UICollectionViewDataSource {
     
-    var movies: [[String: Any]] = []
+    private var movies: [Movie] = Movie.sharedData;
     let alertController = UIAlertController(title: "Error", message: "Movie Not Found", preferredStyle: .alert);
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -21,15 +21,17 @@ class GridViewController: UIViewController,UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PosterCell", for: indexPath) as! PosterCell
         let movie = movies[indexPath.item];
-        if let posterPathString = movie["poster_path"] as? String{
-            let baseURLString = "https://image.tmdb.org/t/p/w500";
+        let posterPathString = movie.posterPath
+        let baseURLString = "https://image.tmdb.org/t/p/w500";
+        
+        if posterPathString != ""{
             let posterURL = URL(string: baseURLString + posterPathString)!;
             cell.posterImageView.af_setImage(withURL: posterURL);
         }
         
         return cell;
     }
-    func fetchMovies(){
+    private func fetchMovies(){
         //self.activityIndicator.startAnimating();
         
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US&page=1-2")!
@@ -60,8 +62,15 @@ class GridViewController: UIViewController,UICollectionViewDataSource {
             }else if let data = data{
                 
                 let dataDictionary =  try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any];
-                let movies = dataDictionary["results"] as! [[String:  Any]];
-                self.movies = movies;
+                let moviesd = dataDictionary["results"] as! [[String:  Any]];
+                print(moviesd);
+                self.movies = [];
+                
+                for dictionary in moviesd{
+                    let  movie = Movie(dictionary: dictionary)
+                    self.movies.append(movie);
+                }
+                
                 self.collectionView.reloadData();
                 //self.refreshControl.endRefreshing();
                 //self.activityIndicator.stopAnimating();
@@ -77,13 +86,16 @@ class GridViewController: UIViewController,UICollectionViewDataSource {
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchMovies();
+        if self.movies.count == 0{
+            fetchMovies();
+        }
+
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.minimumInteritemSpacing = 5;
+        layout.minimumInteritemSpacing = 1;
         layout.minimumLineSpacing = layout.minimumInteritemSpacing;        
         let cellsPerLine: CGFloat = 2;
-        let interItemSpacingTotal = layout.minimumInteritemSpacing * (cellsPerLine - 1) ;
-        let width = collectionView.frame.size.width / cellsPerLine - interItemSpacingTotal / cellsPerLine;
+//        let interItemSpacingTotal = layout.minimumInteritemSpacing * (cellsPerLine - 1) ;
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing*2) / cellsPerLine
         layout.itemSize = CGSize(width: width, height: width * 3/2)
         
         collectionView.dataSource = self;
@@ -94,8 +106,9 @@ class GridViewController: UIViewController,UICollectionViewDataSource {
         let cell = sender as! UICollectionViewCell;
         if let index_path = collectionView.indexPath(for: cell){
             let movie = movies[index_path.row]
+            
             let detailViewController =  segue.destination as! DetailViewController
-            detailViewController.movie = movie;
+            detailViewController.movie = movie
         }
     }
 
