@@ -39,9 +39,18 @@ class DetailViewController: UIViewController {
             backDropPost.af_setImage(withURL: backDropURLString)
             postImageView.af_setImage(withURL: URL(string: posterPathURL + smallPosterURL)!)
         }
+        let gestureRecog = UITapGestureRecognizer(target: self, action: #selector(self.someAction (sender:)))
+        postImageView.isUserInteractionEnabled=true;
+        postImageView.addGestureRecognizer(gestureRecog)
         // Do any additional setup after loading the view.
     }
-
+    
+    // Swift 3
+    @objc func someAction(sender:UITapGestureRecognizer){
+        
+        // this is the function that lets us perform the segue
+        self.performSegue(withIdentifier: "TrailerSegue", sender: self)
+    }
     @IBAction func TrailerButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "TrailerSegue", sender: self)
     }

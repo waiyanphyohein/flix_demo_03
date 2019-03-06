@@ -113,6 +113,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		861DB31F221E1230003EC56C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8609AB832166DA91009DCD54 /* Movie.swift */,
+				862652DC2207A93B00796F7D /* IMDB.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8636B521213A5E5400DA3684 = {
 			isa = PBXGroup;
 			children = (
@@ -140,10 +149,9 @@
 			children = (
 				8684117D2150173200EDF165 /* Views */,
 				8684117C2150171E00EDF165 /* ViewControllers */,
-				8636B52D213A5E5400DA3684 /* AppDelegate.swift */,
-				8609AB832166DA91009DCD54 /* Movie.swift */,
-				862652DC2207A93B00796F7D /* IMDB.swift */,
+				861DB31F221E1230003EC56C /* Models */,
 				8636B531213A5E5400DA3684 /* Main.storyboard */,
+				8636B52D213A5E5400DA3684 /* AppDelegate.swift */,
 				8636B534213A5E5700DA3684 /* Assets.xcassets */,
 				8636B536213A5E5700DA3684 /* LaunchScreen.storyboard */,
 				8636B539213A5E5700DA3684 /* Info.plist */,
@@ -401,7 +409,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-flix_demo_03/Pods-flix_demo_03-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-flix_demo_03/Pods-flix_demo_03-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/KRActivityIndicatorView/KRActivityIndicatorView.framework",
@@ -416,7 +424,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flix_demo_03/Pods-flix_demo_03-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-flix_demo_03/Pods-flix_demo_03-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -91,13 +91,15 @@ class GridViewController: UIViewController,UICollectionViewDataSource {
         }
 
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.minimumInteritemSpacing = 1;
+        layout.minimumInteritemSpacing = 2;
         layout.minimumLineSpacing = layout.minimumInteritemSpacing;        
-        let cellsPerLine: CGFloat = 2;
+        let cellsPerLine: CGFloat = 3;
 //        let interItemSpacingTotal = layout.minimumInteritemSpacing * (cellsPerLine - 1) ;
-        let width = (view.frame.size.width - layout.minimumInteritemSpacing*2) / cellsPerLine
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / cellsPerLine
         layout.itemSize = CGSize(width: width, height: width * 3/2)
         
+        
+    
         collectionView.dataSource = self;
         // Do any additional setup after loading the view.
     }

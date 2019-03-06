@@ -4,7 +4,7 @@
 //
 //  Created by WaiYanPhyo Hein on 9/6/18.
 //  Copyright © 2018 WaiYanPhyo Hein. All rights reserved.
-//
+//\
 
 import UIKit
 import AlamofireImage
@@ -30,7 +30,6 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableVi
         tableView.insertSubview(refreshControl, at: 200);
         tableView.dataSource = self;
         fetchMovies();
-        
     }
     
     @objc func didPullToRefresh(_ refreshControl: UIRefreshControl){
@@ -47,7 +46,7 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableVi
     func fetchMovies(){
         self.activityIndicator.startAnimating();
         
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US&page=1-2")!
+        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US&page=1-3")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20);
         let session = URLSession(configuration: .default, delegate: nil , delegateQueue: OperationQueue.main);
         let task = session.dataTask(with: request) { ( data, response, error) in
@@ -63,18 +62,24 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableVi
                 let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
                     // handle response here.
                 }
+                
+                
                 // add the OK action to the alert controller
                 self.alertController.addAction(OKAction)
                 self.alertController.message = error.localizedDescription;
                 self.present(self.alertController, animated: true) {
                     // optional code for what happens after the alert controller has finished presenting
                 }
+                
                 print(error.localizedDescription);
                 self.refreshControl.endRefreshing();
                 self.activityIndicator.stopAnimating();
+                
+                
             }else if let data = data{
                 
                 let dataDictionary =  try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any];
+                print(dataDictionary);
                 let moviesd = dataDictionary["results"] as! [[String:  Any]];
                 print(moviesd);
                 self.movies = [];
@@ -84,6 +89,8 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableVi
                     self.movies.append(movie);
                  
                 }
+                // {result{}}
+                
                 self.tableView.reloadData();
                 self.refreshControl.endRefreshing();
                 self.activityIndicator.stopAnimating();
@@ -98,6 +105,7 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource,UITableVi
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count;
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell;
         if let index_path = tableView.indexPath(for: cell){

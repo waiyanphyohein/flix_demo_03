@@ -35,15 +35,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GM6-aQ-xoc">
-                                                    <rect key="frame" x="5" y="11" width="157" height="264"/>
-                                                    <color key="backgroundColor" red="1" green="0.96185914354945823" blue="0.98487811599522812" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="264" id="4sd-Sh-RG9"/>
-                                                        <constraint firstAttribute="width" constant="157" id="PeQ-xu-a0B"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="157" id="S9b-ed-nqr"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBd-H3-3g5">
                                                     <rect key="frame" x="170" y="11" width="136" height="30"/>
                                                     <constraints>
@@ -53,6 +44,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GM6-aQ-xoc">
+                                                    <rect key="frame" x="5" y="11" width="157" height="264"/>
+                                                    <color key="backgroundColor" red="1" green="0.96185914354945823" blue="0.98487811599522812" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="264" id="4sd-Sh-RG9"/>
+                                                        <constraint firstAttribute="width" constant="157" id="PeQ-xu-a0B"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="157" id="S9b-ed-nqr"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="GM6-aQ-xoc" firstAttribute="top" secondItem="Ydo-vI-1S4" secondAttribute="top" constant="11" id="4sJ-MM-fJe"/>
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909.5999999999999" y="32.833583208395808"/>
+            <point key="canvasLocation" x="1908.75" y="32.74647887323944"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="ezw-Po-4Zd">
@@ -120,10 +120,14 @@
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PPY-ad-3cO">
                                 <rect key="frame" x="16" y="176" width="141" height="186"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="141" id="YLB-pf-zif"/>
                                     <constraint firstAttribute="height" constant="186" id="xaG-EP-ZXH"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PFH-Pd-bd6" appends="YES" id="vDc-qD-2Ip"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name:" textAlignment="justified" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyF-5P-Xrx">
                                 <rect key="frame" x="165" y="274" width="155" height="59"/>
@@ -191,6 +195,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6c-Ty-YnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PFH-Pd-bd6"/>
             </objects>
             <point key="canvasLocation" x="1908.75" y="842.95774647887322"/>
         </scene>

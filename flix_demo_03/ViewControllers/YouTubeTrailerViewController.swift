@@ -20,7 +20,7 @@ class YouTubeTrailerViewController: UIViewController, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fetchMovieID();
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             
             print(self.key);
             self.videoID = "https://www.youtube.com/watch?v=\(self.key)";
